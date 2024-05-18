@@ -17,14 +17,11 @@ const ColorButton = ({ typeOfColor }) => {
     }
 
     function handleCreateRandomRgbColor() {
-        let rgbColor = 'rgb(';
-        for (let i = 0; i < 3; i++) {
-            if (i < 2) {
-                rgbColor += generateRandomNumber(256) + 1 + ', ';
-            } else {
-                rgbColor += generateRandomNumber(256) + 1 + ')';
-            }
-        }
+        const r = generateRandomNumber(256);
+        const g = generateRandomNumber(256);
+        const b = generateRandomNumber(256);
+
+        rgbColor = `rgb(${r}, ${g}, ${b})`
         setColor(rgbColor);
     }
     return (
